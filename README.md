@@ -67,3 +67,12 @@ You can run a docker container via -
 To build a docker container containing local changes -
 
   docker build -t chevdor/polkadot-ui:latest .
+
+
+----
+
+## Credits
+
+Cat avatar images sources : CC-By 4.0 attribution: David Revoy https://framagit.org/Deevad/cat-avatar-generator
+
+KittyAvatar from https://github.com/shawntabrizi/substrate-collectables-workshop/

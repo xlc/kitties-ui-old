@@ -10,6 +10,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@babel/runtime": "^7.4.5",
-    "@polkadot/ui-app": "^0.33.0-beta.83"
+    "@polkadot/ui-app": "^0.33.0-beta.83",
+    "kitty-avatar": "github:xlc/kitty-avatar#4097d10df14199ec397479320416892fc606f6a9"
   }
 }
