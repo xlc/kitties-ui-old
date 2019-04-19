@@ -22,8 +22,6 @@ import * as types from './types';
 
 getDefaultRegistry().register(types);
 
-const Kitty = types.Kitty;
-
 // define out internal types
 type Props = AppProps & I18nProps;
 type State = {
@@ -36,14 +34,12 @@ class App extends React.PureComponent<Props, State> {
   render () {
     const { accountId } = this.state;
 
-    const kitties = [ new Kitty(), new Kitty(11111), new Kitty(222222222) ];
-
     return (
       // in all apps, the main wrapper is setup to allow the padding
       // and margins inside the application. (Just from a consistent pov)
       <main>
         <AccountSelector onChange={this.onAccountChange} />
-        <KittyViewer kitties={kitties} />
+        <KittyViewer/>
       </main>
     );
   }
