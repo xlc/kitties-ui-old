@@ -1,0 +1,484 @@
+/* Copyright 2017-2019 @polkadot/ui-app authors & contributors
+/* This software may be modified and distributed under the terms
+/* of the Apache-2.0 license. See the LICENSE file for details. */
+
+@import './partials/_variables.css';
+
+.ui--output {
+  background: #fefefe;
+  border-radius: 4px;
+  border: 1px dashed #eee;
+  box-sizing: border-box;
+  line-height: 1rem;
+  margin: 0.25rem;
+  padding: .75rem 1rem;
+  position: relative;
+  word-wrap: break-word;
+
+  &.error {
+    background: #fff6f6;
+    border-color: #e0b4b4;
+  }
+
+  &.monospace {
+    font-family: monospace;
+  }
+
+  .ui--output-button {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+  }
+}
+
+.ui--Button-Group .button {
+  border-radius: $small-corner !important;
+}
+
+header .ui--Button-Group {
+  text-align: center;
+}
+
+.ui.input .ui--Button-Group {
+  margin: 0;
+}
+
+.ui--AddressMini {
+  display: inline-block;
+  padding: 0 0.25rem 0 1rem;
+  white-space: nowrap;
+
+  &.padded {
+    display: inline-block;
+    padding: 0.25rem 0 0 1rem;
+  }
+
+  &.summary {
+    position: relative;
+    top: -0.2rem;
+  }
+
+  .ui--AddressMini-info,
+  .ui--IdentityIcon {
+    display: inline-block;
+    position:relative;
+    vertical-align: middle;
+  }
+
+  .ui--IdentityIcon {
+    margin-left: 0.5rem;
+    margin-right: 0;
+  }
+}
+
+.ui--AddressMini-address {
+  &.withAddr {
+    font-family: monospace;
+  }
+
+  &.withName {
+    text-align: right;
+    text-transform: uppercase;
+    min-width: 4em;
+  }
+}
+
+.ui--AddressRow-base {
+  display: flex;
+}
+
+.ui--AddressRow-icon {
+  margin-right: 1em;
+}
+
+.ui--AddressSummary {
+  padding: 0 1em;
+  white-space: nowrap
+}
+
+button.ui.icon.withDrawUnbonded {
+  padding: 0.3em;
+  margin-left: 0.3em;
+  color: #2e86ab;
+  background: none !important;
+
+  &:hover {
+    color: #fff !important;
+    background-color: #2e86ab !important;
+  }
+}
+
+.result-locked > i {
+  margin-left: .3em
+}
+
+.overview--Account:hover  button.ui.icon.editButton,
+.overview--Account:hover  button.ui.icon.editButton {
+  visibility: visible;
+}
+
+.overview--Account button.ui.icon.editButton,
+.overview--Account button.ui.icon.editButton {
+  visibility: hidden;
+}
+
+.ui--AddressSummary-name.editable > button.ui.icon.editButton,
+.ui--AddressSummary-tags.editable > button.ui.icon.editButton {
+  padding: 0em .3em .3em .3em;
+  color: #2e86ab;
+  background: none;
+  /*trick to let the button in the flow but keep the content centered regardless*/
+  margin-left: -2em;
+  position: relative;
+  right: -2.3em;
+}
+
+.ui--AddressSummary-tags.editable {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ui--AddressSummary-tags.editable > span {
+    border: 1px #00000052 solid;
+    border-radius: .5em;
+    border-style: dashed;
+    color: grey;
+    font-size: x-small;
+    padding: .1em 0.3em 0.1em 0.3em;
+    margin-top: .2em;
+}
+
+.ui--AddressSummary-tags.editable > div.label {
+  margin-top:.3em
+}
+
+.ui--AddressSummary-base {
+  padding: 0 1em;
+  text-align: center;
+}
+
+.ui--AddressSummary-base,
+.ui--AddressSummary-children {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.ui--AddressRow {
+  &.inline {
+    display: flex;
+
+    .ui--AddressSummary-children {
+      padding: 0 0 0 3rem;
+    }
+  }
+
+  .ui--AddressSummary-children {
+    display: block;
+  }
+
+  .ui--AddressRow-details {
+    text-align: left;
+    white-space: nowrap;
+
+    .ui--AddressSummary-data,
+    .ui--AddressSummary-name {
+      margin: 0;
+      text-align: left;
+    }
+  }
+
+  .ui--AddressSummary-balances>span {
+      text-align: left;
+  }
+}
+
+.ui--AddressSummary .rx--updated {
+  background: transparent !important;
+}
+
+.ui--AddressSummary.invalid {
+  filter: grayscale(100);
+  opacity: 0.5;
+}
+
+.ui--AddressSummary-icon {
+  display: block
+}
+
+.ui--AddressSummary-data+.ui--AddressSummary-balance,
+.ui--AddressSummary-data+.ui--AddressSummary-bonded,
+.ui--AddressSummary-data+.ui--AddressSummary-nonce {
+  padding-top: 0.5em;
+}
+
+.ui--AddressSummary-balances {
+  display: grid;
+  grid-column-gap: 1em;
+}
+
+.ui--AddressMini-balances {
+  display: grid;
+}
+
+.label-available,
+.label-balance,
+.label-bonded,
+.label-cryptotype,
+.label-locked,
+.label-nonce,
+.label-redeemable {
+  grid-column:  1;
+  text-align: right;
+  opacity: 0.7;
+}
+
+.result-available,
+.result-balance,
+.result-bonded,
+.result-locked,
+.result-redeemable {
+  grid-column:  2;
+  text-align: left;
+}
+
+.result-nonce,
+.result-cryptotype {
+  text-align: left;
+  opacity: 0.7;
+}
+
+.ui--AddressMini-balances .ui--Bonded.result-bonded,
+.ui--AddressMini-balances .ui--Bonded {
+  font-size: .75rem;
+  margin-right: 2.25rem;
+  margin-top: -.5rem;
+  text-align: right;
+}
+
+.ui--AddressSummary-balance.rx--updated,
+.ui--AddressSummary-nonce.rx--updated {
+  opacity: 1;
+}
+
+.ui--AddressSummary-data {
+  padding: 0;
+  text-align: center;
+  white-space: nowrap;
+
+  .ui--AddressSummary-name {
+    width: 15rem;
+    margin: 0 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+  }
+}
+
+.ui--AddressSummary-data * {
+  vertical-align: middle;
+}
+
+.ui--AddressSummary-accountId,
+.ui--AddressSummary-accountIndex {
+  font-family: monospace;
+  font-size: 1.5em;
+  padding: 0;
+}
+
+.ui--AddressSummary-accountIndex {
+  font-size: 1.25em;
+  font-style: italic;
+}
+
+.ui--AddressSummary-data .ui--Input input {
+  height: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: -.3em;
+  margin-bottom: -.35em;
+}
+
+.ui--AddressSummary-tags-input {
+  margin-bottom: -1.4em;
+}
+
+.ui--Bubble.ui.label {
+  font-weight: normal;
+  margin: 0.25rem;
+  padding: 0;
+
+  * {
+    vertical-align: middle;
+  }
+
+  .ui--Bubble-children,
+  .ui--Bubble-header {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .ui--Bubble-children {
+    padding: 0 0.75rem 0 0;
+  }
+
+  .ui--Bubble-header {
+    background: rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    border-radius: .28571429rem 0 0 .28571429rem;
+    height: 2.75rem;
+    margin-right: 0.75rem;
+    padding: 0 0.75rem;
+    text-align: center;
+    vertical-align: middle;
+
+    > div {
+      display: inline-block;
+      line-height: 2.75rem !important;
+      vertical-align: middle;
+    }
+
+    > .text {
+      padding: 0 0 0 0.25rem;
+    }
+  }
+}
+
+.ui--CopyButton {
+  cursor: copy !important;
+  margin-left: 0.25rem !important;
+  margin-right: 0.25rem !important;
+  position: relative;
+  margin-left: -3em!important;
+  right: -3.3em;
+}
+
+.ui--DropdownLinked.ui--row {
+  .small .ui.selection.dropdown {
+    min-width: 5rem;
+  }
+
+  .ui--DropdownLinked-Items {
+    padding-left: 0.5rem;
+  }
+}
+
+.ui--Input {
+  &.disabled {
+    overflow: hidden;
+
+    input {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .ui--SiDropdown {
+    width: 6rem;
+    text-align: center;
+  }
+
+  .ui--MaxButton {
+    position: absolute;
+    right: 6.5rem;
+    top: 20%;
+    height: 60%;
+    text-transform: uppercase;
+    padding: 0 0.5rem !important;
+    border-radius: 0.3rem !important;
+  }
+}
+
+.ui--InputFile {
+  align-items: center;
+  background: #fff;
+  border: 1px dashed rgba(34, 36, 38, 0.15);
+  border-radius: $small-corner;
+  display: flex;
+  font-size: 1rem;
+  height: 3.5rem;
+  justify-content: center;
+  margin: 0.25rem 0;
+  width: 100% !important;
+
+  &.error {
+    background: #fff6f6;
+    border-color: #e0b4b4;
+  }
+
+  &:hover {
+    background: #fefefe;
+    border-style: solid;
+    cursor: pointer;
+  }
+
+  .label {
+    color: rgba(0, 0, 0, .6);
+  }
+}
+
+.ui--RecentlyOffline {
+  position: absolute;
+  top: 0.75rem;
+  font-size: 12px;
+  cursor: help;
+  display: flex;
+  justify-content: center;
+  left: 0.75rem;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  background: red;
+  color: #eee;
+  border-radius: 16px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: all ease .2s;
+
+  & > * {
+    line-height: 22px;
+    overflow: hidden;
+    transition: all ease 0.25;
+  }
+
+  .badge {
+    font-weight: bold;
+    width: auto;
+  }
+
+  .detail {
+    width: 0;
+  }
+
+  &.expand {
+    width: 300px;
+
+    .badge {
+      width: 0;
+    }
+
+    .detail {
+      width: auto;
+    }
+  }
+
+  &.inline {
+    position: absolute;
+    left: auto;
+    right: -2.75rem;
+    top: -1rem;
+    z-index: 1;
+  }
+}
+
+.ui--Static {
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.ui--Tooltip {
+  text-align: center;
+  z-index: 1002;
+  max-width: 300px;
+}
