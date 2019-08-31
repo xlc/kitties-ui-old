@@ -1,5 +1,9 @@
 # Substrate Kitties UI
 
+Web UI (Please don't abuse it): https://xlc.github.io/kitties-ui/
+
+Telemetry: https://telemetry.polkadot.io/#list/Substrate%20Kitty
+
 Substrate Runtime: https://github.com/xlc/substrate-kitties
 
 app-kitties: https://github.com/xlc/kitties-ui/tree/master/packages/app-kitties
