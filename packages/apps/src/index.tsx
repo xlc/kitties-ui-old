@@ -17,6 +17,20 @@ import { QueueConsumer } from '@polkadot/ui-app/Status/Context';
 import Queue from '@polkadot/ui-app/Status/Queue';
 import Apps from './Apps';
 
+const hijackSettings = () => {
+  const ENDPOINT_DEFAULT = 'wss://substrate-kitty-rpc.kusamakitties.network';
+  const ENDPOINTS = [
+    { text: 'Substrate Kitties Hosted Testnet', value: ENDPOINT_DEFAULT },
+    { text: 'Local Node (127.0.0.1:9944)', value: 'ws://127.0.0.1:9944/' }
+  ];
+  const storedSettings = store.get('settings') || {};
+  const anySettings = settings as any;
+  anySettings._apiUrl = storedSettings.apiUrl || ENDPOINT_DEFAULT;
+  Object.defineProperty(anySettings, 'availableNodes', { value: ENDPOINTS });
+};
+
+hijackSettings();
+
 const rootId = 'root';
 const rootElement = document.getElementById(rootId);
 const url = process.env.WS_URL || settings.apiUrl || undefined;
